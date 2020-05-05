@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
-public class ViewPagerAdapter extends PagerAdapter {
+public class ShowImageAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
@@ -26,7 +26,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     PhotoViewAttacher pAttacher;
 
 
-    public ViewPagerAdapter(Context context, ArrayList<String> imgUrl, int currentPosition) {
+    public ShowImageAdapter(Context context, ArrayList<String> imgUrl, int currentPosition) {
         this.context = context;
         this.ImgUrl = imgUrl;
         this.currentPosition = currentPosition;

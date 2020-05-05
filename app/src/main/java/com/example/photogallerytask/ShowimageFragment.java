@@ -5,12 +5,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,10 +15,8 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
-public class ShowimageFragment extends Fragment {
+public class ShowImageFragment extends Fragment {
 
     private View view;
     private ViewPager viewPager;
@@ -61,8 +56,8 @@ public class ShowimageFragment extends Fragment {
         lastPosition = size - 1;
         currentPosition = getArguments().getInt("position");
 
-        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getContext(),ImgUrl, currentPosition);
-        viewPager.setAdapter(viewPagerAdapter);
+        final ShowImageAdapter showImageAdapter = new ShowImageAdapter(getContext(),ImgUrl, currentPosition);
+        viewPager.setAdapter(showImageAdapter);
         viewPager.setCurrentItem(currentPosition, true);
         pageChange();
 

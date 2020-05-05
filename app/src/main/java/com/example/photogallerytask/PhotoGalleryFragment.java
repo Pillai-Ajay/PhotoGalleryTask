@@ -22,7 +22,7 @@ public class PhotoGalleryFragment extends Fragment {
     View view;
     RecyclerView rvDisplayPhotos;
     ArrayList<String> ImgUrl= new ArrayList<>();
-
+    int spanCount;
 
 
     @Nullable
@@ -48,7 +48,10 @@ public class PhotoGalleryFragment extends Fragment {
         rvDisplayPhotos = (RecyclerView) view.findViewById(R.id.rvDisplayPhotos);
         rvDisplayPhotos.setHasFixedSize(true);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),1, LinearLayoutManager.VERTICAL,false);
+        ImgUrl = getArguments().getStringArrayList("imageURLs");
+        spanCount = getArguments().getInt("spanCount");
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),spanCount, LinearLayoutManager.VERTICAL,false);
         rvDisplayPhotos.setLayoutManager(gridLayoutManager);
         PhotoGalleryAdapter photoGalleryAdapter = new PhotoGalleryAdapter(ImgUrl, getContext());
         rvDisplayPhotos.setAdapter(photoGalleryAdapter);
