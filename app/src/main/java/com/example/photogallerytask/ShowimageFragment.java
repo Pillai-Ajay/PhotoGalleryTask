@@ -56,10 +56,9 @@ public class ShowimageFragment extends BaseActivity {
 //        ImgUrl.add("https://cdn.playbuzz.com/cdn/5cb29908-40a5-42d4-831d-5bea595bcf05/5246cb13-4c32-45ba-89ad-c63cbbcdfde3.jpg");
 //        ImgUrl.add("https://i.dailymail.co.uk/i/pix/2015/09/24/17/2CB89DDF00000578-0-image-a-1_1443111464150.jpg");
 
-        size = getIntent().getIntExtra("selectedImgPos",0);
         imageURLs = getIntent().getStringArrayListExtra("imageUrls");
 
-//        size = imageURLs.size();
+        size = imageURLs.size();
         firstPosition = 0;
         lastPosition = size - 1;
         currentPosition = getIntent().getIntExtra("selectedImgPos",1);
