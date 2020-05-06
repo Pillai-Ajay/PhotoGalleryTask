@@ -1,5 +1,6 @@
 package com.example.photogallerytask;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -66,10 +67,15 @@ public class PhotoGalleryAdapter extends RecyclerView.Adapter<PhotoGalleryAdapte
 //                    fragmentTransaction.commit();
 //                }
 
+                ShowImage
+                        .with((BaseActivity) context,imgUrl)
+                        .selectedImgPos(position)
+                        .show();
 
-                Intent gridActivity = new Intent(context, ShowimageFragment.class);
-                gridActivity.putExtra("position", position);
-                context.startActivity(gridActivity);
+
+//                Intent gridActivity = new Intent(context, ShowimageFragment.class);
+//                gridActivity.putExtra("position", position);
+//                context.startActivity(gridActivity);
             }
         });
     }
