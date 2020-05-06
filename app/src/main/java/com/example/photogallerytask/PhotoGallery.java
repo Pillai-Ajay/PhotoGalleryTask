@@ -1,7 +1,6 @@
 package com.example.photogallerytask;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.FragmentManager;
@@ -48,7 +47,7 @@ public class PhotoGallery {
         PhotoGalleryFragment fragment=new PhotoGalleryFragment();
         fragment.setArguments(bundle);
         String tag = "my_fragment";
-        FragmentManager fragmentManager = ((MainActivity) mActivity).getSupportFragmentManager();
+        FragmentManager fragmentManager = ((BaseActivity) mActivity).getSupportFragmentManager();
 
         if(fragmentManager.findFragmentByTag(tag) == null) {
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

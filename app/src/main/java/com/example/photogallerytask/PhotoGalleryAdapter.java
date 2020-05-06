@@ -56,7 +56,7 @@ public class PhotoGalleryAdapter extends RecyclerView.Adapter<PhotoGalleryAdapte
                 ShowimageFragment fragment=new ShowimageFragment();
                 fragment.setArguments(bundle);
                 String tag = "my_fragment";
-                FragmentManager fragmentManager = ((MainActivity) context).getSupportFragmentManager();
+                FragmentManager fragmentManager = ((BaseActivity) context).getSupportFragmentManager();
 
                 if(fragmentManager.findFragmentByTag(tag) == null) {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
