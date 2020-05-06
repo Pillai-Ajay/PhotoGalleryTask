@@ -67,7 +67,7 @@ public class PhotoGalleryAdapter extends RecyclerView.Adapter<PhotoGalleryAdapte
 //                }
 
 
-                Intent gridActivity = new Intent(context, PhotoGalleryFragment.class);
+                Intent gridActivity = new Intent(context, ShowimageFragment.class);
                 gridActivity.putExtra("position", position);
                 context.startActivity(gridActivity);
             }
