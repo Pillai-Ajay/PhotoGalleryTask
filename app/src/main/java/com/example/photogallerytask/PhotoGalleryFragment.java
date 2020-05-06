@@ -66,7 +66,7 @@ public final class PhotoGalleryFragment extends BaseActivity {
 
     @Override
     protected void afterInflation() {
-        rvDisplayPhotos = (RecyclerView) view.findViewById(R.id.rvDisplayPhotos);
+        rvDisplayPhotos = (RecyclerView) findViewById(R.id.rvDisplayPhotos);
         rvDisplayPhotos.setHasFixedSize(true);
 
         ImgUrl = getIntent().getStringArrayListExtra("imageURLs");
