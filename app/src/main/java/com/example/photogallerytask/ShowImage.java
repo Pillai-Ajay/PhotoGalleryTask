@@ -23,7 +23,7 @@ public class ShowImage {
     }
 
     public void show(){
-        Intent showImageFragment = new Intent(mActivity,ShowImageFragment.class);
+        Intent showImageFragment = new Intent(mActivity, ShowimageFragment.class);
         showImageFragment.putExtra("imageUrls",mImageUrls);
     }
 }

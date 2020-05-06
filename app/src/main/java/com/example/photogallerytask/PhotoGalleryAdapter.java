@@ -53,7 +53,7 @@ public class PhotoGalleryAdapter extends RecyclerView.Adapter<PhotoGalleryAdapte
             public void onClick(View v) {
                 Bundle bundle=new Bundle();
                 bundle.putInt("position",position);
-                ShowImageFragment fragment=new ShowImageFragment();
+                ShowimageFragment fragment=new ShowimageFragment();
                 fragment.setArguments(bundle);
                 String tag = "my_fragment";
                 FragmentManager fragmentManager = ((MainActivity) context).getSupportFragmentManager();

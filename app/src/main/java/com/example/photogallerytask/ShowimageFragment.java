@@ -16,7 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 
-public class ShowImageFragment extends Fragment {
+public class ShowimageFragment extends Fragment {
 
     private View view;
     private ViewPager viewPager;
