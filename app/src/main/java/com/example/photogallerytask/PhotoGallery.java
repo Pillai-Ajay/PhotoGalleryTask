@@ -1,6 +1,7 @@
 package com.example.photogallerytask;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.FragmentManager;
@@ -41,19 +42,24 @@ public class PhotoGallery {
 //        fragmentTransaction.commit();
 
 
-        Bundle bundle=new Bundle();
-        bundle.putStringArrayList("imageURLs",imagesURLs);
-        bundle.putInt("spanCount", spanCount);
-        PhotoGalleryFragment fragment=new PhotoGalleryFragment();
-        fragment.setArguments(bundle);
-        String tag = "my_fragment";
-        FragmentManager fragmentManager = ((BaseActivity) mActivity).getSupportFragmentManager();
+        Intent gridActivity = new Intent(mActivity, PhotoGalleryFragment.class);
+        gridActivity.putExtra("imageURLs", imagesURLs);
+        gridActivity.putExtra("spanCount", spanCount);
+        mActivity.startActivity(gridActivity);
 
-        if(fragmentManager.findFragmentByTag(tag) == null) {
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.frame_container, fragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
-        }
+//        Bundle bundle=new Bundle();
+//        bundle.putStringArrayList("imageURLs",imagesURLs);
+//        bundle.putInt("spanCount", spanCount);
+//        PhotoGalleryFragment fragment=new PhotoGalleryFragment();
+//        fragment.setArguments(bundle);
+//        String tag = "my_fragment";
+//        FragmentManager fragmentManager = ((BaseActivity) mActivity).getSupportFragmentManager();
+//
+//        if(fragmentManager.findFragmentByTag(tag) == null) {
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            fragmentTransaction.replace(R.id.frame_container, fragment);
+//            fragmentTransaction.addToBackStack(null);
+//            fragmentTransaction.commit();
+//        }
     }
 }

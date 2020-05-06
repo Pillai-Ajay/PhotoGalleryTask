@@ -11,12 +11,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        if(null == savedInstanceState){
-            FragmentManager fm = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fm.beginTransaction();
-            fragmentTransaction.add(R.id.frame_container,new PhotoGalleryFragment());
-            fragmentTransaction.commit();
-        }
+        setContentView(getResourceLayoutId());
+
+        afterInflation();
     }
+
+    protected abstract int getResourceLayoutId();
+
+    protected abstract void afterInflation();
 }
