@@ -6,13 +6,17 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+import java.util.ArrayList;
+
 public abstract class BaseActivity extends AppCompatActivity {
+
+    protected ArrayList<String> imageURLs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getResourceLayoutId());
-
+        imageURLs = getIntent().getStringArrayListExtra("imageURLs");
         afterInflation();
     }
 

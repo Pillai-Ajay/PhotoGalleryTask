@@ -21,7 +21,6 @@ public final class PhotoGalleryFragment extends BaseActivity {
 
     View view;
     RecyclerView rvDisplayPhotos;
-    ArrayList<String> ImgUrl= new ArrayList<>();
     int spanCount;
 
 
@@ -69,12 +68,12 @@ public final class PhotoGalleryFragment extends BaseActivity {
         rvDisplayPhotos = (RecyclerView) findViewById(R.id.rvDisplayPhotos);
         rvDisplayPhotos.setHasFixedSize(true);
 
-        ImgUrl = getIntent().getStringArrayListExtra("imageURLs");
+
         spanCount = getIntent().getIntExtra("spanCount",1);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,spanCount, LinearLayoutManager.VERTICAL,false);
         rvDisplayPhotos.setLayoutManager(gridLayoutManager);
-        PhotoGalleryAdapter photoGalleryAdapter = new PhotoGalleryAdapter(ImgUrl, this);
+        PhotoGalleryAdapter photoGalleryAdapter = new PhotoGalleryAdapter(imageURLs, this);
         rvDisplayPhotos.setAdapter(photoGalleryAdapter);
     }
 }
