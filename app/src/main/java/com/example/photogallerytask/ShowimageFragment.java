@@ -16,7 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 
-public class ShowimageFragment extends Fragment {
+public class ShowimageFragment extends BaseActivity {
 
     private View view;
     private ViewPager viewPager;
@@ -27,15 +27,20 @@ public class ShowimageFragment extends Fragment {
     private boolean state = true;
     int posit,dummy;
 
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view =  inflater.inflate(R.layout.layout_show_image,container,false);
 
-        btnNext  = (ImageButton) view.findViewById(R.id.btnNext);
-        btnPrev  = (ImageButton) view.findViewById(R.id.btnPrev);
-        btnPlay  = (ImageButton) view.findViewById(R.id.btnPlay);
-        btnPause = (ImageButton) view.findViewById(R.id.btnStop);
-        viewPager = (ViewPager) view.findViewById(R.id.viewPagerShowImage);
+
+    @Override
+    protected int getResourceLayoutId() {
+        return R.layout.layout_show_image;
+    }
+
+    @Override
+    protected void afterInflation() {
+        btnNext  = (ImageButton) findViewById(R.id.btnNext);
+        btnPrev  = (ImageButton) findViewById(R.id.btnPrev);
+        btnPlay  = (ImageButton) findViewById(R.id.btnPlay);
+        btnPause = (ImageButton) findViewById(R.id.btnStop);
+        viewPager = (ViewPager) findViewById(R.id.viewPagerShowImage);
 
         ImgUrl.add("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Jordan_Lipofsky.jpg/170px-Jordan_Lipofsky.jpg");
         ImgUrl.add("https://cdn.playbuzz.com/cdn/62b7af36-65b7-41aa-8db2-e34fd8a76acf/62c5efd3-fa55-464b-8ee5-9a3e2543c830.jpg");
@@ -54,9 +59,9 @@ public class ShowimageFragment extends Fragment {
         size = ImgUrl.size();
         firstPosition = 0;
         lastPosition = size - 1;
-        currentPosition = getArguments().getInt("position");
+        currentPosition = getIntent().getIntExtra("position",1);
 
-        final ShowImageAdapter showImageAdapter = new ShowImageAdapter(getContext(),ImgUrl, currentPosition);
+        final ShowImageAdapter showImageAdapter = new ShowImageAdapter(this,ImgUrl, currentPosition);
         viewPager.setAdapter(showImageAdapter);
         viewPager.setCurrentItem(currentPosition, true);
         pageChange();
@@ -92,15 +97,15 @@ public class ShowimageFragment extends Fragment {
         btnPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    if (viewPager.getCurrentItem() == firstPosition)
-                    {
-                        viewPager.setCurrentItem(lastPosition, true);
-                    }else {
-                        viewPager.setCurrentItem(viewPager.getCurrentItem() - 1, true);
-                        currentPosition = viewPager.getCurrentItem();
-                        handler.removeCallbacks(runnable);
-                        runnable.run();
-                    }
+                if (viewPager.getCurrentItem() == firstPosition)
+                {
+                    viewPager.setCurrentItem(lastPosition, true);
+                }else {
+                    viewPager.setCurrentItem(viewPager.getCurrentItem() - 1, true);
+                    currentPosition = viewPager.getCurrentItem();
+                    handler.removeCallbacks(runnable);
+                    runnable.run();
+                }
             }
         });
 
@@ -120,17 +125,16 @@ public class ShowimageFragment extends Fragment {
                 Log.e("In if and position is :", String.valueOf(viewPager.getCurrentItem()));
             }
         });
-             return view;
     }
 
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-                if (btnPause.getVisibility() == View.VISIBLE)
-                {
-                    handler.postDelayed(this,5000);
-                    viewPager.setCurrentItem(currentPosition++, true);
-                }
+            if (btnPause.getVisibility() == View.VISIBLE)
+            {
+                handler.postDelayed(this,5000);
+                viewPager.setCurrentItem(currentPosition++, true);
+            }
 //                else if (viewPager.getCurrentItem() == size-1)
 //                {
 //                    viewPager.setCurrentItem(1, true);
@@ -160,7 +164,7 @@ public class ShowimageFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-               if(position == size-1){
+                if(position == size-1){
 //                    runnable.run();
                 }else {
                     btnPrev.setVisibility(View.VISIBLE);

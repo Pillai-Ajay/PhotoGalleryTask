@@ -1,6 +1,7 @@
 package com.example.photogallerytask;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,21 +52,24 @@ public class PhotoGalleryAdapter extends RecyclerView.Adapter<PhotoGalleryAdapte
         holder.ivDisplayPhotos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle=new Bundle();
-                bundle.putInt("position",position);
-                ShowimageFragment fragment=new ShowimageFragment();
-                fragment.setArguments(bundle);
-                String tag = "my_fragment";
-                FragmentManager fragmentManager = ((BaseActivity) context).getSupportFragmentManager();
+//                Bundle bundle=new Bundle();
+//                bundle.putInt("position",position);
+//                ShowimageFragment fragment=new ShowimageFragment();
+//                fragment.setArguments(bundle);
+//                String tag = "my_fragment";
+//                FragmentManager fragmentManager = ((BaseActivity) context).getSupportFragmentManager();
+//
+//                if(fragmentManager.findFragmentByTag(tag) == null) {
+//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                    fragmentTransaction.replace(R.id.frame_container, fragment);
+//                    fragmentTransaction.addToBackStack(null);
+//                    fragmentTransaction.commit();
+//                }
 
-                if(fragmentManager.findFragmentByTag(tag) == null) {
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.frame_container, fragment);
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
-                }
 
-
+                Intent gridActivity = new Intent(context, PhotoGalleryFragment.class);
+                gridActivity.putExtra("position", position);
+                context.startActivity(gridActivity);
             }
         });
     }
