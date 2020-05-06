@@ -6,7 +6,7 @@
 
 
 
-    <androidx.viewpager.widget.ViewPager
+    <com.example.photogallerytask.CustomViewPager
         android:id="@+id/viewPagerShowImage"
         android:background="#000"
         android:layout_height="match_parent"

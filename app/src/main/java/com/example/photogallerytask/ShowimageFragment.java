@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class ShowimageFragment extends BaseActivity {
 
     private View view;
-    private ViewPager viewPager;
+    private CustomViewPager viewPager;
     private Handler handler = new Handler();
 //    private ArrayList<String> ImgUrl= new ArrayList<>();
     private ImageButton btnPrev, btnNext, btnPause, btnPlay;
@@ -40,7 +40,7 @@ public class ShowimageFragment extends BaseActivity {
         btnPrev  = (ImageButton) findViewById(R.id.btnPrev);
         btnPlay  = (ImageButton) findViewById(R.id.btnPlay);
         btnPause = (ImageButton) findViewById(R.id.btnStop);
-        viewPager = (ViewPager) findViewById(R.id.viewPagerShowImage);
+        viewPager = (CustomViewPager) findViewById(R.id.viewPagerShowImage);
 
 //        ImgUrl.add("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Jordan_Lipofsky.jpg/170px-Jordan_Lipofsky.jpg");
 //        ImgUrl.add("https://cdn.playbuzz.com/cdn/62b7af36-65b7-41aa-8db2-e34fd8a76acf/62c5efd3-fa55-464b-8ee5-9a3e2543c830.jpg");
