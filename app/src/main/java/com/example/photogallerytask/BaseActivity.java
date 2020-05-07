@@ -17,8 +17,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getResourceLayoutId());
         imageURLs = getIntent().getStringArrayListExtra("imageURLs");
-        seconds = getIntent().getIntExtra("seconds",0);
-        seconds = seconds * 1000;
         afterInflation();
     }
 

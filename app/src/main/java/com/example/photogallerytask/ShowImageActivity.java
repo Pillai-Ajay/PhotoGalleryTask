@@ -37,6 +37,8 @@ public class ShowImageActivity extends BaseActivity {
         viewPager = (CustomViewPager) findViewById(R.id.viewPagerShowImage);
 
         imageURLs = getIntent().getStringArrayListExtra("imageUrls");
+        seconds = getIntent().getIntExtra("seconds",0);
+        seconds = seconds * 1000;
 
         size = imageURLs.size();
         firstPosition = 0;
