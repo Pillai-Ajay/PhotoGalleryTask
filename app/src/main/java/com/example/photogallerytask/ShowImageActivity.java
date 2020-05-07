@@ -16,7 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 
-public class ShowimageFragment extends BaseActivity {
+public class ShowImageActivity extends BaseActivity {
 
     private CustomViewPager viewPager;
     private Handler handler = new Handler();

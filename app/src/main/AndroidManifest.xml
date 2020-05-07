@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
         <activity android:name=".PhotoGalleryActivity"/>
-        <activity android:name=".ShowimageFragment"/>
+        <activity android:name=".ShowImageActivity"/>
     </application>
 
 </manifest>

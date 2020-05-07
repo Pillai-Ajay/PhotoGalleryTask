@@ -29,7 +29,7 @@ public class ShowImage {
     }
 
     public void show(){
-        Intent showImageFragment = new Intent(mActivity, ShowimageFragment.class);
+        Intent showImageFragment = new Intent(mActivity, ShowImageActivity.class);
         showImageFragment.putExtra("imageUrls",mImageUrls);
         showImageFragment.putExtra("selectedImgPos",selectedImgPos);
         mActivity.startActivity(showImageFragment);
