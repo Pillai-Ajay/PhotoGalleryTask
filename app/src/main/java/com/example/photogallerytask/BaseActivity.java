@@ -11,12 +11,14 @@ import java.util.ArrayList;
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected ArrayList<String> imageURLs;
-
+    protected int seconds;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getResourceLayoutId());
         imageURLs = getIntent().getStringArrayListExtra("imageURLs");
+        seconds = getIntent().getIntExtra("seconds",5);
+        seconds = seconds * 1000;
         afterInflation();
     }
 

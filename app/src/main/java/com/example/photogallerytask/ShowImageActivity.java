@@ -112,7 +112,7 @@ public class ShowImageActivity extends BaseActivity {
         public void run() {
             if (btnPause.getVisibility() == View.VISIBLE)
             {
-                handler.postDelayed(this,5000);
+                handler.postDelayed(this,seconds);
                 viewPager.setCurrentItem(currentPosition++, true);
             }
         }

@@ -19,7 +19,6 @@ import java.util.ArrayList;
 
 public final class PhotoGalleryActivity extends BaseActivity {
 
-    View view;
     RecyclerView rvDisplayPhotos;
     int spanCount;
 
