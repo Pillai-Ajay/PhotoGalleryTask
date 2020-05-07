@@ -23,8 +23,6 @@ public class ShowImageAdapter extends PagerAdapter {
     private LayoutInflater layoutInflater;
     ArrayList<String> ImgUrl= new ArrayList<>();
     int currentPosition;
-    PhotoViewAttacher pAttacher;
-
 
     public ShowImageAdapter(Context context, ArrayList<String> imgUrl, int currentPosition) {
         this.context = context;
@@ -49,7 +47,6 @@ public class ShowImageAdapter extends PagerAdapter {
         View view = layoutInflater.inflate(R.layout.item_view_pager,null);
         PhotoView imageView = (com.github.chrisbanes.photoview.PhotoView) view.findViewById(R.id.ivShowImages);
 
-
         Glide.with(this.context)
                 .load(ImgUrl.get(position))
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -59,9 +56,6 @@ public class ShowImageAdapter extends PagerAdapter {
         ViewPager viewPager = (ViewPager) container;
         viewPager.addView(view,0);
 
-//        pAttacher = new PhotoViewAttacher(imageView);
-//        pAttacher.setZoomable(true);
-//        pAttacher.update();
         return  view;
     }
 

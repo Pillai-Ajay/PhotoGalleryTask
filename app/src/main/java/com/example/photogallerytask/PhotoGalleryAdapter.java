@@ -45,7 +45,6 @@ public class PhotoGalleryAdapter extends RecyclerView.Adapter<PhotoGalleryAdapte
                 .load(imgUrl.get(position))
                 .apply(new RequestOptions()
                 .placeholder(ContextCompat.getDrawable(this.context, R.drawable.noimage)))
-//                .apply(RequestOptions.placeholderOf(R.drawable.noimage))
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.ivDisplayPhotos)
                 ;
@@ -53,29 +52,10 @@ public class PhotoGalleryAdapter extends RecyclerView.Adapter<PhotoGalleryAdapte
         holder.ivDisplayPhotos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Bundle bundle=new Bundle();
-//                bundle.putInt("position",position);
-//                ShowimageFragment fragment=new ShowimageFragment();
-//                fragment.setArguments(bundle);
-//                String tag = "my_fragment";
-//                FragmentManager fragmentManager = ((BaseActivity) context).getSupportFragmentManager();
-//
-//                if(fragmentManager.findFragmentByTag(tag) == null) {
-//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                    fragmentTransaction.replace(R.id.frame_container, fragment);
-//                    fragmentTransaction.addToBackStack(null);
-//                    fragmentTransaction.commit();
-//                }
-
                 ShowImage
                         .with((BaseActivity) context,imgUrl)
                         .selectedImgPos(position)
                         .show();
-
-
-//                Intent gridActivity = new Intent(context, ShowimageFragment.class);
-//                gridActivity.putExtra("position", position);
-//                context.startActivity(gridActivity);
             }
         });
     }

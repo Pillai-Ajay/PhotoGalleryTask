@@ -31,35 +31,9 @@ public class PhotoGallery {
     }
 
     public void show() {
-//        Intent gridActivity = new Intent(mActivity, ZGridActivity.class);
-//        gridActivity.putExtra("imageURLs", imagesURLs);
-//        gridActivity.putExtra("spanCount", spanCount);
-//        mActivity.startActivity(gridActivity);
-
-//        FragmentManager fm = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-//        fragmentTransaction.add(R.id.frame_container, new PhotoGalleryFragment());
-//        fragmentTransaction.commit();
-
-
         Intent gridActivity = new Intent(mActivity, PhotoGalleryFragment.class);
         gridActivity.putExtra("imageURLs", imagesURLs);
         gridActivity.putExtra("spanCount", spanCount);
         mActivity.startActivity(gridActivity);
-
-//        Bundle bundle=new Bundle();
-//        bundle.putStringArrayList("imageURLs",imagesURLs);
-//        bundle.putInt("spanCount", spanCount);
-//        PhotoGalleryFragment fragment=new PhotoGalleryFragment();
-//        fragment.setArguments(bundle);
-//        String tag = "my_fragment";
-//        FragmentManager fragmentManager = ((BaseActivity) mActivity).getSupportFragmentManager();
-//
-//        if(fragmentManager.findFragmentByTag(tag) == null) {
-//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//            fragmentTransaction.replace(R.id.frame_container, fragment);
-//            fragmentTransaction.addToBackStack(null);
-//            fragmentTransaction.commit();
-//        }
     }
 }
