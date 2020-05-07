@@ -2,10 +2,6 @@ package com.example.photogallerytask;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
-
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
@@ -31,7 +27,7 @@ public class PhotoGallery {
     }
 
     public void show() {
-        Intent gridActivity = new Intent(mActivity, PhotoGalleryFragment.class);
+        Intent gridActivity = new Intent(mActivity, PhotoGalleryActivity.class);
         gridActivity.putExtra("imageURLs", imagesURLs);
         gridActivity.putExtra("spanCount", spanCount);
         mActivity.startActivity(gridActivity);

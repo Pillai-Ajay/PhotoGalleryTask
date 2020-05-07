@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public final class PhotoGalleryFragment extends BaseActivity {
+public final class PhotoGalleryActivity extends BaseActivity {
 
     View view;
     RecyclerView rvDisplayPhotos;
