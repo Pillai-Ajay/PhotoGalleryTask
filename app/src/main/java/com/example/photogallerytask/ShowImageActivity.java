@@ -38,7 +38,12 @@ public class ShowImageActivity extends BaseActivity {
 
         imageURLs = getIntent().getStringArrayListExtra("imageUrls");
         seconds = getIntent().getIntExtra("seconds",2);
-        seconds = seconds * 1000;
+        if(seconds == 0){
+            seconds = 5 * 1000;
+        }else {
+            seconds = seconds * 1000;
+        }
+
         Log.e("Seconds are", String.valueOf(seconds));
 
         size = imageURLs.size();
