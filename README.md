@@ -1,6 +1,7 @@
 # PhotoGalleryTask
 ### Prodedure to add the dependency in your android project is :
-1. Add this line in build.gradle(Project:project)   ->    maven { url 'https://jitpack.io' }
+1. Add this line in build.gradle(Project:project)   :       
+   maven { url 'https://jitpack.io' }
 ```
     allprojects {
         repositories {
