@@ -21,7 +21,7 @@ public class ShowImageAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    ArrayList<String> ImgUrl= new ArrayList<>();
+    ArrayList<String> ImgUrl;
     int currentPosition;
 
     public ShowImageAdapter(Context context, ArrayList<String> imgUrl, int currentPosition) {

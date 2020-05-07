@@ -21,7 +21,7 @@ public class ShowImageActivity extends BaseActivity {
     private CustomViewPager viewPager;
     private Handler handler = new Handler();
     private ImageButton btnPrev, btnNext, btnPause, btnPlay;
-    private int size, currentPosition, firstPosition, lastPosition;
+    private int size, currentPosition, firstPosition, lastPosition, seconds;
 
     @Override
     protected int getResourceLayoutId() {
@@ -37,7 +37,7 @@ public class ShowImageActivity extends BaseActivity {
         viewPager = (CustomViewPager) findViewById(R.id.viewPagerShowImage);
 
         imageURLs = getIntent().getStringArrayListExtra("imageUrls");
-        seconds = getIntent().getIntExtra("seconds",0);
+        seconds = getIntent().getIntExtra("seconds",2);
         seconds = seconds * 1000;
 
         size = imageURLs.size();

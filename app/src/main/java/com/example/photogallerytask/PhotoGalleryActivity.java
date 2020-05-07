@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public final class PhotoGalleryActivity extends BaseActivity {
 
     RecyclerView rvDisplayPhotos;
-    int spanCount;
+    int spanCount, seconds;
 
     @Override
     protected int getResourceLayoutId() {
@@ -33,10 +33,11 @@ public final class PhotoGalleryActivity extends BaseActivity {
         rvDisplayPhotos.setHasFixedSize(true);
 
         spanCount = getIntent().getIntExtra("spanCount",1);
+        seconds = getIntent().getIntExtra("seconds",2);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,spanCount, LinearLayoutManager.VERTICAL,false);
         rvDisplayPhotos.setLayoutManager(gridLayoutManager);
-        PhotoGalleryAdapter photoGalleryAdapter = new PhotoGalleryAdapter(imageURLs, this);
+        PhotoGalleryAdapter photoGalleryAdapter = new PhotoGalleryAdapter(imageURLs, this,seconds);
         rvDisplayPhotos.setAdapter(photoGalleryAdapter);
     }
 }

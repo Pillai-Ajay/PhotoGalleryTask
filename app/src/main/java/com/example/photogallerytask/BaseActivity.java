@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected ArrayList<String> imageURLs;
-    protected int seconds;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

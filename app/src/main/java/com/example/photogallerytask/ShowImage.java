@@ -9,6 +9,7 @@ public class ShowImage {
     private Activity mActivity;
     private ArrayList<String> mImageUrls;
     private int selectedImgPos;
+    private int seconds;
 
     private ShowImage(){
 
@@ -28,10 +29,16 @@ public class ShowImage {
         return this;
     }
 
+    public ShowImage setSeconds(int seconds) {
+        this.seconds = seconds;
+        return this;
+    }
+
     public void show(){
         Intent showImageFragment = new Intent(mActivity, ShowImageActivity.class);
         showImageFragment.putExtra("imageUrls",mImageUrls);
         showImageFragment.putExtra("selectedImgPos",selectedImgPos);
+        showImageFragment.putExtra("seconds",seconds);
         mActivity.startActivity(showImageFragment);
     }
 }

@@ -25,10 +25,12 @@ public class PhotoGalleryAdapter extends RecyclerView.Adapter<PhotoGalleryAdapte
 
     Context context;
     ArrayList<String> imgUrl;
+    int seconds;
 
-    public PhotoGalleryAdapter(ArrayList<String> imgUrl, Context context) {
+    public PhotoGalleryAdapter(ArrayList<String> imgUrl, Context context, int seconds) {
         this.context = context;
         this.imgUrl = imgUrl;
+        this.seconds = seconds;
     }
 
     @NonNull
@@ -55,6 +57,7 @@ public class PhotoGalleryAdapter extends RecyclerView.Adapter<PhotoGalleryAdapte
                 ShowImage
                         .with((BaseActivity) context,imgUrl)
                         .selectedImgPos(position)
+                        .setSeconds(seconds)
                         .show();
             }
         });
