@@ -33,7 +33,7 @@ public final class PhotoGalleryActivity extends BaseActivity {
         rvDisplayPhotos.setHasFixedSize(true);
 
         spanCount = getIntent().getIntExtra("spanCount",1);
-        seconds = getIntent().getIntExtra("seconds",2);
+        seconds = getIntent().getIntExtra("seconds",5);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,spanCount, LinearLayoutManager.VERTICAL,false);
         rvDisplayPhotos.setLayoutManager(gridLayoutManager);
